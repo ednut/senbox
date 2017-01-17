@@ -11,6 +11,7 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css" />
+        <link rel="stylesheet" href="css/animate.css" />
         <link rel="stylesheet" href="css/font/font.css" />
         <link rel="stylesheet" href="css/general.css" />
 
@@ -59,7 +60,7 @@
                  </div>
                 </div>
                 <div class="imgInfo pull-right">
-                 <div class="img" style="background-image: url('img/responsive.PNG');">
+                 <div class="img wow fadeIn" style="background-image: url('img/responsive.PNG');">
                    
                  </div>
                 </div>
@@ -73,7 +74,7 @@
 
               <div class="information clearfix">
                 <div class="imgInfo pull-left">
-                  <div class="img" style="background-image: url('img/track.PNG');">
+                  <div class="img wow bounceInDown" style="background-image: url('img/track.PNG');">
                   </div>
                 </div>
                 <div class="textInfo pull-right">
@@ -106,7 +107,7 @@
                  </div>
                 </div>
                 <div class="imgInfo pull-right">
-                 <div class="img" style="background-image: url('img/results.PNG');">
+                 <div class="img wow rubberBand" style="background-image: url('img/results.PNG');">
                    
                  </div>
                 </div>
@@ -120,7 +121,7 @@
 
               <div class="information clearfix">
                 <div class="imgInfo pull-left">
-                  <div class="img" style="background-image: url('img/insight.PNG');">
+                  <div class="img wow wobble" style="background-image: url('img/insight.PNG');">
                   </div>
                 </div>
                 <div class="textInfo pull-right">
@@ -145,5 +146,9 @@
         </footer>
 
         <script src="js/jquery-1.11.3.min.js"></script>
+        <script src="js/wow.min.js"></script>
+        <script>
+          new WOW().init();
+        </script>
     </body>
 </html>
