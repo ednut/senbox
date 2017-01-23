@@ -5,7 +5,7 @@ body{
 	font-weight: @fontWeight;
 }
 .container{
-	max-width: 1200px;
+	padding: 10px 20px!important;
     margin: auto;
     position: relative;
 }
@@ -31,26 +31,25 @@ body{
 }
 @media (max-width: 767px) {
   .hidden-xs {
-    display: none ;
+    display: none !important;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .hidden-sm {
-    display: none ;
+    display: none !important;
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   .hidden-md {
-    display: none ;
+    display: none !important;
   }
 }
 @media (min-width: 1200px) {
   .hidden-lg {
-    display: none ;
+    display: none !important;
   }
 }
 
-@media (min-width:992px) {
 header{
 	width: 100%;
 	border-bottom: 1px solid @borderColor;
@@ -65,14 +64,14 @@ header{
 	z-index: 1;
 	.logo{
 		float: left;
-		width: 30%;
+		width: 70%;
 		text-align: left;
-		margin-top: -13px;
+		height: 60px;
+		overflow: hidden;
 		a{
 			display: block;
 			img{
 				width: 160px;
-	    		margin-top: 12px;
 			}
 		}
 	}
@@ -83,7 +82,6 @@ header{
 		ul{
 			margin: 0;
 			padding: 0;
-			margin-top: -10px;
 			li{
 				display: inline;
 				padding: 0 25px;
@@ -109,6 +107,70 @@ header{
 			}
 		}
 	}
+	.mobileToggle{
+		float: right;
+		width: 30%;
+		text-align: right;
+		cursor: pointer;
+		ul{
+			margin: 0;
+			padding: 0;
+			li{
+				display: inline;
+				padding: 0 25px;
+				span{
+					display: inline-block;
+					i{
+						font-size: 2em;
+					}
+				}
+			}
+		}
+	}
+	.mobileNav{
+		position: fixed;
+	    top: 12px;
+	    left: 2%;
+   		width: 85%;
+	    height: auto;
+	    padding: 20px 15px;
+	    text-align: center;
+	    border-radius: 12px;
+	    background-color: #fbfbfb;
+	    box-shadow: 0 32px 116px rgba(63, 49, 178, .16), 0 8px 28px rgba(63, 49, 178, .08);
+	    display: none;
+	    span.toggleBtn{
+			display: block;
+		    text-align: right;
+		    line-height: 1;
+		    font-size: 1.5em;
+		    color: @brandColor1;
+		    position: absolute;
+		    right: 13px;
+		    top: 10px;
+	    }
+	    ul{
+			margin: 0;
+			padding: 0;
+			margin-top: 12px;
+			li{
+				display: inline-block;
+				width: 50%;
+				float: left;
+				text-align: left;
+				line-height: 40px;
+				&:nth-child(2n){
+					float: right;
+					text-align: right;
+				}
+				a{
+					text-decoration: none;
+					display: inline-block;
+					color: @fontColor;
+				}
+			}
+		}
+	}
 }
 .background{
 	background-color: @lightBackground;
@@ -116,16 +178,16 @@ header{
 section.banner{
 	margin-top: @headerHeight;
 	width: 100%;
-	height: @bannerHeight;
+	height: @mobileBannerHeight;
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position: -16em 7em;
+	background-position: -17em 14em;
 	overflow: hidden;
 	.content{
 		text-align: center;
-    	padding: 5em 16em;
+    	padding: 10px;
     	.title{
-			font-size: 60px;
+			font-size: 35px;
     		font-weight: bold;
     		margin-bottom: @bigMarginBtm;
     	}
@@ -160,9 +222,9 @@ section.banner{
 }
 section.whatWeDo{
 	text-align: center;
-	padding: 5em 16em;
+	padding: 10px;
 	.title{
-		font-size: 50px;
+		font-size: 30px;
 		font-weight: 100;
 		margin-bottom: @bigMarginBtm;
 	}
@@ -172,16 +234,13 @@ section.whatWeDo{
 	}
 }
 section.points{
-	margin-top: @sectionMarginTop;
-	margin-bottom: @bigMarginBtm;
-	padding: 5em 0em;
+	padding: 20px 0 0 0;
 	width: 100%;
 	.titleWrap{
 		text-align: center;
 		margin-bottom: @sectionMarginTop;
-		padding: 0 20em;
 		.title{
-			font-size: 22px;
+			font-size: 16px;
 		    line-height: 1.25;
 		    letter-spacing: .04em;
 		    text-transform: uppercase;
@@ -201,28 +260,23 @@ section.points{
 		}
 	}
 	.info{
-		width: 30%;
-		float: left;
+		width: 100%;
 		height: auto;
-		margin-right: 56px;
 		margin-bottom: 50px;
-		&:nth-child(3n){
-			float: right;
-			margin-right: 0;
-		}
 		.img{
-			width: 18%;
+			width: 100%;
     		height: 50px;
 			background-repeat: no-repeat;
 			overflow: hidden;
 			margin-bottom: @smallMarginBtm;
 			background-position: center;
-    		background-size: cover;
+    		background-size: auto 100%;
 		}
 		.title{
 			margin-bottom: @smallMarginBtm;
 			font-weight: 600;
 			font-size: 21px;
+			text-align: center;
 		}
 		.description{
 			color: @fontColorLight;
@@ -235,8 +289,7 @@ section.features{
 	.featureWrap{
 		width: 100%;
 		.leftInfo{
-			width: 30%;
-			float: left;
+			width: 100%;
 			.smallTitle{
 				font-size: 11px;
 				color: @fontColorLight;
@@ -258,21 +311,21 @@ section.features{
 			    border: 1px solid transparent;
 			    background-color: #EA1E54;
 			    color: #fff;
-			    padding: 10px 15px;
+			    padding: 7px 10px;
 			    border-radius: 3px;
 			    margin-bottom: 30px;
 			}
 		}
 		.rightInfo{
-			width: 60%;
-			float: right;
+			width: 100%;
 			.infoTab{
 				background-color: #fff;
-				width: 43%;
+				width: 85%;
 			    padding: 20px;
 			    border-radius: 3px;
 			    text-align: center;
-			    height: 6em;
+			    float: none;
+			    height: auto;
 			    margin-bottom: 30px;
 			    vertical-align: top;
 			    display: inline-block;
@@ -377,6 +430,7 @@ section.ourClients{
 	}
 }
 section.informationWrap{
+	display: none;
 	margin-bottom: @bigMarginBtm;
 	padding: 8em 0;
 	.information{
@@ -423,21 +477,16 @@ section.getStarted{
 	margin-top: @bigMarginBtm;
 	a.learnMore{
 		display: inline-block;
-	    width: 43%;
+	    width: 75%;
+	    margin-bottom: @bigMarginBtm;
 	    padding: 32px 32px;
 	    border-radius: 6px;
 	    background-color: #fff;
 	    box-shadow: 0 12px 22px rgba(63, 49, 178, .08), 0 6px 11px rgba(63, 49, 178, .04);
 	    text-decoration: none;
-	    &:first-child{
-	    	float: left;
-	    }
-	    &:last-child{
-	    	float: right;
-	    }
 	    .title{
 			color: #333;
-			font-size: 21px;
+			font-size: 16px;
 		    font-weight: 500;
 		    line-height: 1.25;
 		    letter-spacing: -.02em;
@@ -461,27 +510,26 @@ footer{
 	// line-height: @footerHeight;
 	// font-size: 13px;
 	background-color: @whiteBackground;
-	padding: 50px 0;
+	padding: 50px 10px;
 	.logoImg{
-		width: 20%;
+		width: 100%;
 		float: left;
 		height: 100%;
+		text-align: center;
+		margin-bottom: @bigMarginBtm;
 		img{
-			width: 60%;
+			width: 50%;
 			margin-top: -15px;
 		}
 	}
 	.linkSec{
-		width: 60%;
+		width: 100%;
 		float: left;
+		margin-bottom: @bigMarginBtm;
 		height: 100%;
 		.footerColumn{
-			width: 25%;
+			width: 100%;
 			float: left;
-			text-align: left;
-			&:last-child{
-				float: right;
-			}
 			.heading{
 				font-size: 13px;
 			    display: block;
@@ -508,7 +556,7 @@ footer{
 		}
 	}
 	.socialSec{
-		width: 20%;
+		width: 100%;
 		float: right;
 		height: 100%;
 		text-align: right;
@@ -516,6 +564,7 @@ footer{
 			margin: 0;
 			padding: 0;
 			list-style: none;
+			text-align: center;
 			li{
 				display: inline-block;
 			    margin: 0 15px 0 0;
@@ -523,11 +572,10 @@ footer{
 			    letter-spacing: normal;
 			    a{
 			    	color: #767e8c;
-			    	font-size: 30px;
+			    	font-size: 20px;
 			    	text-decoration: none;
 			    }
 			}
 		}
 	}
-}
 }
